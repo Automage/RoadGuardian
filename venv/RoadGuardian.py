@@ -1,6 +1,6 @@
 import pandas as pd
 
-df = pd.read_csv('/Users/Pranav/Documents/Hackathons/HackHarvard/RoadGuardian/venv/test2.csv')
+df = pd.read_csv('/Users/Pranav/Documents/Hackathons/HackHarvard/RoadGuardian/venv/Vehicle Crashes 14-15.csv')
 numRows = len(df.index);
 prevDate = df.iloc[1, 0]
 prevHour = df.iloc[1, 1]
@@ -29,8 +29,6 @@ for x in range (numRows):
     else:
         dateList.append(prevDate)
         prevDate = date
-        #finalHourList.append(prevHour)
-        #hourList.clear()
         hourList.append(prevHour)
         prevHour = hour
         accidentsList.append(hourCount)
@@ -38,16 +36,10 @@ for x in range (numRows):
 
 dateList.append(prevDate)
 hourList.append(prevHour)
-#hourList.append(prevHour)
-#finalHourList = finalHourList + hourList
-#finalHourList.append(prevHour)
-#print(finalHourList)
-#print("Added to final")
 accidentsList.append(hourCount)
 
 print("date list: "+str(len(dateList)))
 print("hour list: "+str(len(hourList)))
-#print("final hour list: "+str(len(finalHourList)))
 
 dictionary = {"date": dateList, "hour": hourList, "accidents": accidentsList}
 out = pd.DataFrame(dictionary)
