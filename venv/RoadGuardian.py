@@ -38,6 +38,8 @@ dateList.append(prevDate)
 hourList.append(prevHour)
 accidentsList.append(hourCount)
 
+print("gello")
+
 print("date list: "+str(len(dateList)))
 print("hour list: "+str(len(hourList)))
 
